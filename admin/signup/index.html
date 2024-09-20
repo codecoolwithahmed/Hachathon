@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>Admin Signup</title>
+    <style>
+
+    </style>
+</head>
+
+<body class="common-body signup-page">
+
+    <div class="signup-container">
+        <h2>Admin Signup</h2>
+        <form>
+            <!-- Name Field -->
+            <input id="name" type="text" placeholder="Enter your name" required>
+            <!-- Email Field -->
+            <input id="email" type="email" placeholder="Enter your email" required>
+            <!-- Password Field -->
+            <input id="password" type="password" placeholder="Enter your password" required>
+            <!-- Profile Picture Upload -->
+            <input id="profilephoto" type="file" accept="image/*" required>
+            <!-- Signup Button -->
+            <button id="signup">Signup</button>
+            <p>Already have an account? <a href="../../login/index.html">Log In</a></p>
+            <!-- Go to Home link -->
+            <div class="home-link-container">
+                <a href="../../index.html" class="home-link">Go to Home</a>
+            </div>
+        </form>
+    </div>
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>

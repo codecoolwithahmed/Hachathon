@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>Admin Panel</title>
+    <style>
+
+    </style>
+</head>
+
+<body class="common-body">
+    <div class="admin-panel">
+        <div class="admin-navbar">
+            <div class="admin-navbar-left">
+                <img id="adminphoto" src="https://via.placeholder.com/120" alt="" width="70px" height="70px"
+                    style="border-radius: 50%; object-fit: cover;">
+                <div class="admin-navbar-left-text">
+                    <h3 id="adminname">-</h3>
+                    <p id="adminemail">-</p>
+                </div>
+            </div>
+            <div>
+                <button id="add-student-btn" class="add-student-btn">Add Student</button>
+                <button id="log-out-btn" class="add-student-btn">Log Out</button>
+            </div>
+        </div>
+
+        <div class="form-container" id="formContainer">
+            <div class="form-box">
+                <h2>Add New Student</h2>
+                <input type="file" id="profilePhoto" accept="image/*">
+                <input type="text" id="studentName" placeholder="Name">
+                <input type="email" id="studentEmail" placeholder="Email">
+                <input type="text" id="studentCNIC" placeholder="CNIC">
+                <input type="password" id="studentPassword" placeholder="Password">
+                <button id="saveButton">Save</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="detailed-view-container" id="detailedViewContainer">
+        <div class="detailed-view-box">
+            <span class="close-icon" id="closeDetailedViewButton">&times;</span>
+            <div class="detailed-view-left">
+                <img id="detailedPhoto" src="" alt="Profile Photo">
+                <p><strong>Name:</strong><input id="editstudentinputname" type="text" style="display: none;"> <span
+                        id="detailedName"></span></p>
+                <p><strong>Email:</strong><input id="editstudentinputemail" type="email" style="display: none;"> <span
+                        id="detailedEmail"></span></p>
+                <p><strong>CNIC:</strong><input id="editstudentinputcnic" type="text" style="display: none;"> <span
+                        id="detailedCNIC"></span></p>
+                <p><strong>Password:</strong><input id="editstudentinputpassword" type="text" style="display: none;">
+                    <span id="detailedPassword"></span></p>
+                <button id="editstudentdata">Edit</button>
+                <button id="savestudentdata" style="display: none;">Save</button>
+            </div>
+            <div class="detailed-view-right">
+                <h3>Subjects</h3>
+                <table id="subjectsTable">
+                    <tr>
+                        <th>Subject</th>
+                        <th>Marks</th>
+                        <th>Grade</th>
+                        <th>Total Marks</th>
+                    </tr>
+                    <tr>
+                        <td>Math</td>
+                        <td>
+                            <span id="mathMarksSpan" class="span"></span>
+                            <input type="text" id="mathMarksInput" class="input" style="display: none;">
+                        </td>
+                        <td>
+                            <span id="mathGradeSpan" class="span"></span>
+                            <input type="text" id="mathGradeInput" class="input" style="display: none;">
+                        </td>
+                        <td>
+                            <span id="mathTotalMarksSpan" class="span"></span>
+                            <input type="text" id="mathTotalMarksInput" class="input" style="display: none;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>English</td>
+                        <td>
+                            <span id="englishMarksSpan" class="span"></span>
+                            <input type="text" id="englishMarksInput" class="input" style="display: none;">
+                        </td>
+                        <td>
+                            <span id="englishGradeSpan" class="span"></span>
+                            <input type="text" id="englishGradeInput" class="input" style="display: none;">
+                        </td>
+                        <td>
+                            <span id="englishTotalMarksSpan" class="span"></span>
+                            <input type="text" id="englishTotalMarksInput" class="input" style="display: none;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Urdu</td>
+                        <td>
+                            <span id="urduMarksSpan" class="span"></span>
+                            <input type="text" id="urduMarksInput" class="input" style="display: none;">
+                        </td>
+                        <td>
+                            <span id="urduGradeSpan" class="span"></span>
+                            <input type="text" id="urduGradeInput" class="input" style="display: none;">
+                        </td>
+                        <td>
+                            <span id="urduTotalMarksSpan" class="span"></span>
+                            <input type="text" id="urduTotalMarksInput" class="input" style="display: none;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Islamiat</td>
+                        <td>
+                            <span id="islamiatMarksSpan" class="span"></span>
+                            <input type="text" id="islamiatMarksInput" class="input" style="display: none;">
+                        </td>
+                        <td>
+                            <span id="islamiatGradeSpan" class="span"></span>
+                            <input type="text" id="islamiatGradeInput" class="input" style="display: none;">
+                        </td>
+                        <td>
+                            <span id="islamiatTotalMarksSpan" class="span"></span>
+                            <input type="text" id="islamiatTotalMarksInput" class="input" style="display: none;">
+                        </td>
+                    </tr>
+
+
+                </table>
+                <button id="editMarksButton">Edit Marks</button>
+                <button id="saveMarksButton" style="display: none;">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="studentCardsContainer">
+        <div id="card"></div>
+
+
+    </div>
+    </div>
+    <script type="module" src="app.js"></script>
+
+</body>
+
+</html>

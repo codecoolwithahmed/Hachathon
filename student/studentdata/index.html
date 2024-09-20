@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>Student Card</title>
+</head>
+<body class="common-body">
+
+    <div id="login-container" class="login-container">
+        <h2>Enter Your CNIC to view your Result</h2>
+        <form>
+            <input id="resultinput" type="number" placeholder="Enter your CNIC" required>
+            <div id="error-message" style="display:none; color: red;"></div>
+
+            <button id="result" type="submit">Check Result</button>
+            <!-- <p>Do you want to login? <a href="../../login/index.html">Log In</a></p> -->
+            <div class="home-link-container">
+                <a href="../../index.html" class="home-link">Go to Home</a>
+            </div>
+        </form>
+    </div>
+
+    <div id="student-panel-card" class="student-panel-card">
+        <span class="close-icon" id="closeDetailedViewButton">&times;</span>
+        <div class="student-card-upper">
+            <div class="student-panel-photo">
+                <img id="studentimg" src="../images/11.jpg" alt="Student Photo">
+            </div>
+            <div class="student-info">
+                
+                <h2 id="studentname">-</h2>
+                <input id="nameinput" type="text" style="display: none;" placeholder="Name">
+                <p id="studentemail">-</p>
+                <input id="emailinput" type="email" style="display: none;" placeholder="EMail">
+                <p id="studentPassword">-</p>
+                <input id="passwordinput" type="text" style="display: none;" placeholder="Password">
+                <p id="studentCNIC">-</p>
+                <input id="cnicinput" type="number" style="display: none;" placeholder="CNIC">
+            </div>
+            <div class="editbtn"> 
+            
+                    <button id="editbtn" class="add-student-btn">Edit</button>
+                    <button id="savebtn" style="display: none;" class="add-student-btn">save</button>
+                
+            </div>
+            
+        </div>
+        <div class="subjects-info">
+            <h3>Subjects</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Marks</th>
+                        <th>Grade</th>
+                        <th id="total">Total Marks</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>English</td>
+                        <td id="englishMarks">85</td>
+                        <td id="englishGrade">A</td>
+                        <td id="englishTotalMarks">a</td>
+                    </tr>
+                    <tr>
+                        <td>Maths</td>
+                        <td id="mathsMarks">90</td>
+                        <td id="mathsGrade">A+</td>
+                        <td id="mathsTotalMarks">A</td>
+                    </tr>
+                    <tr>
+                        <td>Urdu</td>
+                        <td id="urduMarks">78</td>
+                        <td id="urduGrade">B</td>
+                        <td id="urduTotalMarks">A</td>
+                    </tr>
+                    <tr>
+                        <td>Islamiat</td>
+                        <td id="islamiatMarks">82</td>
+                        <td id="islamiatGrade">B+</td>
+                        <td id="islamiatTotalMarks">A</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
